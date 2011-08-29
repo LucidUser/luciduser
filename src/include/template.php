@@ -9,7 +9,9 @@
       private $xtpl = null;
   
       function __construct($theme = '') {
-      
+
+         // TODO: auto-detect theme from db if none is specified      
+
          if(!empty($theme)) { $this->default_theme = $theme; } else { $this->default_theme = autodetect; }
          chdir("../");
          $this->theme_path = getcwd() . "/themes/" . $this->default_theme . "/";
