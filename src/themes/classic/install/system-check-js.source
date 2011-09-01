@@ -1,0 +1,70 @@
+   var checkPass = "<img src=\"../themes/classic/images/ajax/green-check.png\">";
+   var checkFail = "<img src=\"../themes/classic/images/ajax/red-x.png\">";
+   var checkNum = 0;
+   var stepNum = 0;
+   var numErr = 0;
+
+   function resetCheck() {
+   
+      checkNum = 0;
+      stepNum = 0;
+      numErr = 0;
+      $("#errMsg").hide("fast");
+      $("#btnSysCheck").button("disable");
+      $("#btnCont").button("disable");
+      for(var i = 1; i < check.length + 1; i++) {
+      
+         $("#check" + i).empty();
+         $("#detect" + i).html("-");
+         
+      }
+      
+      systemCheck();
+      
+   }
+   
+   function systemCheck() {
+
+      if(checkNum == 0) { window.notifier.notify("processing"); }
+      if(checkNum >= check.length) { 
+      
+         window.notifier.clear();
+         $("#btnSysCheck").button("enable"); 
+         if(numErr == 0) {
+         
+            $("#btnCont").button("enable");
+            
+         }
+         else {
+         
+            $("#errMsg").show("fast");
+            
+         }
+         return; 
+         
+      }
+      stepNum = check[checkNum][0];
+      $("#check" + stepNum).html("<img src=\"../themes/classic/images/ajax/progress.gif\">");
+      window.ajax.get("#detect" + stepNum, check[checkNum][1], "", "", check[checkNum][2]);
+    
+   }
+   
+   function checkStep() {
+   
+      var checkStr = "";
+      if(stepNum == "1") { checkStr = $("#detect" + stepNum).html().substr(0, 3); } else { checkStr = $("#detect" + stepNum).html(); }
+      if(checkStr == check[checkNum][3]) {
+         
+         $("#check" + stepNum).html(checkPass);
+            
+      } else {
+         
+         $("#check" + stepNum).html(checkFail);
+         numErr++;
+            
+      }
+      
+      checkNum++;
+      systemCheck();
+      
+   }

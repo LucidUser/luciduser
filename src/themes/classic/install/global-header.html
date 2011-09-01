@@ -1,0 +1,45 @@
+<!-- BEGIN: main -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+   <!-- BEGIN: header -->
+   <head>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      {META}
+      <link rel="stylesheet" href="{THEME_PATH}/style.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="{THEME_PATH}/install.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/blitzer/jquery-ui.css" type="text/css" media="screen" />
+      
+      {JS}
+      <script type="text/javascript">
+     
+         $(document).ready(function() {
+         
+            ajax.get("#main", window.THEME_PATH + "/install/index.html", "", "loading", "");
+            
+         });
+         
+      </script>
+      
+      <title>{TITLE}</title>
+      
+   </head>
+   <!-- END: header -->
+
+   <body>
+
+      <div id="wrapper">
+
+         <div id="content">
+            
+            <div id="block-left">
+            
+               {FILE {BLOCKLEFT}}   
+               
+               <div class="clear"></div>
+               
+            </div>
+            
+            <div id="main">
+<!-- END: main -->

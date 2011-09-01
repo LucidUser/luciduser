@@ -1,0 +1,62 @@
+<script type="text/javascript">
+
+   $("#block-left ul li").removeClass();
+   $("#step2").addClass("active");
+   
+   var checks = [
+                  [ "1", "../libs/AJAX/install/phpVersion.php", "0,3", "5.2" ],
+                  [ "2", "../libs/AJAX/install/filePermissions.php?f=../../../include/config.php", "", "0755" ],
+                  [ "3", "../libs/AJAX/install/filePermissions.php?f=../../../themes/classic/", "", "0755" ],
+               ];
+   
+   var checker = new AjaxChecker(checks, "#btnSysCheck", "#btnCont", "#errMsg", true, "#check", "#detect", "-");   
+      
+</script>
+
+<p style="float:right;"><img src="../themes/classic/install/images/usercake-badge-mini.png" alt="UserCake" title="UserCake"></p>
+<div class="clear"></div>
+<p style="position:relative;top:-15px;">Click the button below to run the <strong>System Check</strong>.</p>
+<div style="position:relative;top:-15px;text-align:center;display:none;" id="errMsg"><div class="ui-widget"><div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> <strong>Warning:</strong> Please correct any errors below before continuing.</p></div></div></div>
+<h2 style="position:relative;top:-20px;text-align:left;">System Requirements</h2>
+<table border="0" width="100%" height="100%">
+<tr valign="middle">
+<th width="35%">&nbsp;</th>
+<th width="30%">Required</th>
+<th width="30%">Detected</th>
+<th>&nbsp;</th>
+</tr>
+<tr valign="middle">
+<td align="left">PHP Version</td>
+<td align="center">>= 5.2</td>
+<td align="center" id="detect1">-</td>
+<td align="left" id="check1">&nbsp;</td>
+</tr>
+</table>
+<br>
+<h2 style="position:relative;top:-20px;text-align:left;">File / Directory Permissions</h2>
+<table border="0" width="100%" height="100%">
+<tr valign="middle">
+<th width="35%">&nbsp;</th>
+<th width="30%">Required</th>
+<th width="30%">Detected</th>
+<th>&nbsp;</th>
+</tr>
+<tr valign="middle">
+<td align="left">include/config.php</td>
+<td align="center">0755</td>
+<td align="center" id="detect2">-</td>
+<td align="left" id="check2">&nbsp;</td>
+</tr>
+<tr valign="middle">
+<td align="left">themes/classic</td>
+<td align="center">0755</td>
+<td align="center" id="detect3">-</td>
+<td align="left" id="check3">&nbsp;</td>
+</tr>
+</table><br>
+<table style="min-height:100%;" border="0" width="100%" height="100%">
+<tr valign="bottom">
+<td align="right" width="50%"><input type="button" value="Begin System Check" id="btnSysCheck" onclick="checker.reset();checker.check();"></td>
+<td align="right" width="50%"><input type="button" value="Continue &raquo;" id="btnCont" onclick="window.ajax.get('#main','../themes/' + theme + '/install/database-setup.html', '', 'loading', '')"></td>
+</tr>
+</table>

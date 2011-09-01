@@ -1,0 +1,13 @@
+<script type="text/javascript">
+   $(document).ready(function() {
+   
+      $("#block-left ul").removeClass();
+      $("#step1").addClass("active");
+      $("#btnCont").button();
+      
+   });
+</script>
+
+<p><img src="../themes/classic/install/images/usercake-badge.png"></p>
+<p>The following steps will assist in the setup.</p>
+<p style="float:right;"><input type="button" value="Continue &raquo;" id="btnCont" onclick="window.ajax.get('#main',THEME_PATH + '/install/system-check.html', '', 'loading', '')"></p>

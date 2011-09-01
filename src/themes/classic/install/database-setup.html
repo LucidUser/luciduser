@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+   $("#block-left ul li").removeClass();
+   $("#step3").addClass("active");
+   $("#btnDbCheck").button();
+   $("#btnCont").button().button("disable");
+
+   // compressed with YUI Compressor 2.4.2
+   // see system-check-js.source for the original code
+   var checkPass='<img src="../themes/default/images/ajax/green-check.png">';var checkFail='<img src="../themes/default/images/ajax/red-x.png">';var checkNum=0;var stepNum=0;var numErr=0;function resetCheck(){checkNum=0;stepNum=0;numErr=0;$("#errMsg").hide("fast");$("#btnSysCheck").button("disable");$("#btnCont").button("disable");for(var a=1;a<check.length+1;a++){$("#check"+a).empty();$("#detect"+a).html("-")}systemCheck()}function systemCheck(){if(checkNum==0){window.notifier.notify("processing")}if(checkNum>=check.length){window.notifier.clear();$("#btnSysCheck").button("enable");if(numErr==0){$("#btnCont").button("enable")}else{$("#errMsg").show("fast")}return}stepNum=check[checkNum][0];$("#check"+stepNum).html('<img src="../themes/default/images/ajax/progress.gif">');window.ajax.get("#detect"+stepNum,check[checkNum][1],"","",check[checkNum][2])}function checkStep(){var a="";if(stepNum=="1"){a=$("#detect"+stepNum).html().substr(0,3)}else{a=$("#detect"+stepNum).html()}if(a==check[checkNum][3]){$("#check"+stepNum).html(checkPass)}else{$("#check"+stepNum).html(checkFail);numErr++}checkNum++;systemCheck()};
+   
+</script>
+
+<p style="float:right;"><img src="../themes/default/install/images/usercake-badge-mini.png" alt="UserCake" title="UserCake"></p>
+<div class="clear"></div>
+<p style="position:relative;top:-15px;text-align:center;">Enter connection information below then click the button to verify.</p>
+<div style="position:relative;top:-15px;text-align:center;display:none;" id="errMsg"><div class="ui-widget"><div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> <strong>Warning:</strong> Please correct any errors below before continuing.</p></div></div></div>
+<h2 style="position:relative;top:-20px;text-align:left;">Database Connection</h2>
+<table border="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="left" width="30%"><strong>Database Type:</strong></td>
+<td align="left" width="30%"><select><option value="mysql">mySQL</option><option value="mysqli">mySQLi</option</select></td>
+<td align="left" id="check1">&nbsp;</td>
+</tr>
+</table>
+<br>
+<table style="position:relative;top:-20px;" border="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="right" width="50%"><input type="button" value="Verify Settings" id="btnDbCheck" onclick="resetCheck()"></td>
+<td align="right" width="50%"><input type="button" value="Continue &raquo;" id="btnCont" onclick="window.ajax.get('#main','../themes/' + theme + '/install/database-setup.html', '', 'loading', '')"></td>
+</tr>
+</table>
