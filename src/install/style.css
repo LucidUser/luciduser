@@ -1,0 +1,123 @@
+html, body {
+
+   margin: 0px;
+   font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+   font-size:10pt;
+   color:#000;
+   background: #DBD7D1;
+   
+}
+
+a {
+
+   color: #105289;
+   text-decoration: none;
+   
+}
+
+p {
+
+   text-align: center;
+   
+}
+
+.buttons {
+
+   position:absolute;
+   right:8px;
+   bottom:15px;
+   
+}
+
+.clear {
+
+   clear:both;
+   
+}
+
+#wrapper {
+
+   margin:10px auto 0 auto;
+   border: 0.2px solid #000;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   width:95%;
+   height: 540px;
+   background: #F3F3F3 url('images/innerbox_bg.gif') repeat-x top right;
+
+}
+
+#wrapper #content {
+
+   padding:5px 0 0 0;
+   height:100%;
+
+}
+
+#wrapper #content #block-left {
+
+   width: 200px;
+   padding: 0 10px;
+   position:relative;
+   top:-5px;
+   border-right: 1px solid #CCCFD3;
+   float:left;
+   height: 100%;
+
+}
+
+#wrapper #content #block-left ul {
+
+   padding:0 0 50px 0;
+   cursor: default;
+   margin:0;
+
+}
+
+#wrapper #content #block-left ul li {
+	
+   text-align: left;
+   margin:0;
+   list-style:none;
+   color: #909090;
+   padding-left: 15px;
+   line-height: 30px;
+   font-size: 103%;
+
+}
+
+#wrapper #content #block-left ul li.active {
+
+   color: #4d4948;
+   font-weight: bold;
+	
+}
+
+#wrapper #content #main {
+
+   position: relative;
+   height:100%;
+   padding-right: 10px;
+   
+}
+
+/* AJAX Styles */
+
+#ajax-notifier {
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	padding: 5px;
+	text-align: center;
+	cursor: default;
+	display: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.notifier-loading {
+	background-color: #565656;
+	color: #FFFFFF;
+}
