@@ -12,7 +12,15 @@
       
          if(!empty($theme)) { $this->default_theme = $theme; } else { $this->default_theme = autodetect; }
          chdir("../");
-         $this->theme_path = getcwd() . "/themes/" . $this->default_theme . "/";
+         if($theme == "install") {
+         
+            $this->theme_path = getcwd() . "/install/tpl/";
+            
+         } else {
+         
+            $this->theme_path = getcwd() . "/themes/" . $this->default_theme . "/";
+            
+         }
       
       }
 
