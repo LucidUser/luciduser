@@ -122,6 +122,7 @@ function AjaxChecker(checks, checkBtn, cntBtn, errCnt, req2cnt, checkIndCnt, che
    this.check = function() {
 
       if(parentThis.checkNum == 0) { window.notifier.notify("processing"); }
+      alert(parentThis.checkNum + " = " + checks.length);
       if(parentThis.checkNum == checks.length) { 
       
          window.notifier.clear();
