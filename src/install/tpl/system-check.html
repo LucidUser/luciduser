@@ -4,10 +4,10 @@
    $("#step2").addClass("active");
    
    var checks = [
-                  [ "1", "../libs/AJAX/install/phpVersion.php", "0,3", "5.2" ],
-                  [ "2", "../libs/AJAX/install/filePermissions.php?f=../../../include/config.php", "", "0755" ],
-                  [ "3", "../libs/AJAX/install/filePermissions.php?f=../../../themes/classic/", "", "0755" ],
-               ];
+                   [ "1", "../libs/AJAX/install/phpVersion.php", "0,3", "5.2" ],
+                   [ "2", "../libs/AJAX/install/filePermissions.php?f=../../../include/config.php", "", "0755" ],
+                   [ "3", "../libs/AJAX/install/filePermissions.php?f=../../../themes/classic/", "", "0755" ]
+                ];
    
    var checker = new AjaxChecker(checks, "#btnSysCheck", "#btnCont", "#errMsg", true, "#check", "#detect", "-");   
       
