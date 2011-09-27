@@ -1,9 +1,11 @@
+/* General Styles */
+
 html, body {
 
    margin: 0px;
    font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
-   font-size:10pt;
-   color:#000;
+   font-size: 10pt;
+   color: #000;
    background: #DBD7D1;
    
 }
@@ -21,11 +23,28 @@ p {
    
 }
 
+h2 {
+
+   margin-left: 10px;
+   margin-bottom: -3px;
+   
+}
+
+.logo-sm {
+
+   float: right;
+   width: 105px;
+   height: 73px;
+   padding-top: 10px;
+   padding-right: 10px;
+   
+}
+
 .buttons {
 
-   position:absolute;
-   right:8px;
-   bottom:15px;
+   position: absolute;
+   right: 5px;
+   bottom: 5px;
    
 }
 
@@ -35,51 +54,59 @@ p {
    
 }
 
+/* Install Styles */ 
+
+.ui-state-error p {
+
+   text-align: left;
+   
+}
+
 #wrapper {
 
-   margin:10px auto 0 auto;
+   position: relative;
+   margin: 10px auto 0 auto;
    border: 0.2px solid #000;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
-   width:95%;
-   height: 540px;
+   width: 1000px;
+   min-height: 540px;
    background: #F3F3F3 url('images/innerbox_bg.gif') repeat-x top right;
 
 }
 
 #wrapper #content {
 
-   padding:5px 0 0 0;
-   height:100%;
+   position: relative;
+   width: 1000px;
+   min-height: 540px;
 
 }
 
 #wrapper #content #block-left {
 
+   position: relative;
    width: 200px;
-   padding: 0 10px;
-   position:relative;
-   top:-5px;
-   border-right: 1px solid #CCCFD3;
-   float:left;
-   height: 100%;
+   margin-top: 10px;
+   margin-left: 10px;
+   float: left;
 
 }
 
 #wrapper #content #block-left ul {
 
-   padding:0 0 50px 0;
+   padding: 0 0 50px 0;
    cursor: default;
-   margin:0;
+   margin: 0;
 
 }
 
 #wrapper #content #block-left ul li {
 	
    text-align: left;
-   margin:0;
-   list-style:none;
+   margin: 0;
+   list-style: none;
    color: #909090;
    padding-left: 15px;
    line-height: 30px;
@@ -97,8 +124,43 @@ p {
 #wrapper #content #main {
 
    position: relative;
-   height:100%;
-   padding-right: 10px;
+   float: right;
+   left: -1px;
+   width: 788px;
+   min-height: 540px;
+   
+}
+
+.colHead {
+
+   font-weight: bold;
+   font-size: 1.2em;
+   
+}
+
+.col1 {
+
+   display: inline-block;
+   text-align: left;
+   padding: 10px;
+   width: 300px;
+   
+}
+
+.col2 {
+
+   display: inline-block;
+   text-align: center;
+   padding: 10px;
+   width: 172px;
+   
+}
+
+.col3 {
+
+   display: inline-block;
+   padding: 10px;
+   width: 20px;
    
 }
 
